@@ -1,0 +1,1043 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IPPMA Se-Jayapura </title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #0b0b0e;
+  color: white;
+}
+
+:root {
+  --pink: #ed168c;
+  --blue: #087de3;
+  --dark: #0b0b0e;
+  --card: #191920;
+}
+
+header {
+  background: #111116;
+  padding: 15px 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--pink);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-area img {
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+}
+
+.logo-area h2 {
+  font-size: 17px;
+  color: var(--pink);
+}
+
+.logo-area p {
+  font-size: 11px;
+  color: #ccc;
+  margin-top: 4px;
+}
+
+nav {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: var(--pink);
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 12px 18px;
+  font-weight: bold;
+}
+
+.btn-pink {
+  background: var(--pink);
+  color: white;
+}
+
+.btn-blue {
+  background: var(--blue);
+  color: white;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--pink);
+  color: white;
+}
+
+.hero {
+  padding: 70px 7%;
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  background:
+    radial-gradient(circle at top right, #37122c, transparent 50%),
+    linear-gradient(120deg, #0b0b0e, #15151d);
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-text .tag {
+  color: var(--pink);
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.hero h1 {
+  font-size: clamp(32px, 5vw, 55px);
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.hero h1 span {
+  color: var(--pink);
+}
+
+.hero p {
+  color: #ccc;
+  line-height: 1.8;
+  max-width: 600px;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.hero-logo {
+  flex: 0 1 330px;
+  text-align: center;
+}
+
+.hero-logo img {
+  width: 100%;
+  max-width: 330px;
+  filter: drop-shadow(0 0 20px #ed168c33);
+}
+
+section {
+  padding: 55px 7%;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.section-title h2 {
+  color: var(--pink);
+  margin-bottom: 10px;
+}
+
+.section-title p {
+  color: #aaa;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid #292932;
+  padding: 25px;
+  border-radius: 14px;
+}
+
+.card h3 {
+  margin-bottom: 12px;
+  color: var(--pink);
+}
+
+.card p {
+  color: #ccc;
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+.form-section {
+  background: #111116;
+}
+
+form {
+  max-width: 750px;
+  margin: auto;
+  background: var(--card);
+  padding: 25px;
+  border-radius: 15px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.field {
+  margin-bottom: 15px;
+}
+
+.field.full {
+  grid-column: 1 / -1;
+}
+
+label {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 13px;
+  color: #ddd;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #383843;
+  background: #101016;
+  color: white;
+  outline: none;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--pink);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.small-note {
+  color: #999;
+  font-size: 12px;
+  margin-top: 6px;
+}
+
+.full-btn {
+  width: 100%;
+}
+
+footer {
+  padding: 35px 7%;
+  background: #08080a;
+  border-top: 2px solid var(--pink);
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 25px;
+}
+
+footer h3, footer h4 {
+  color: var(--pink);
+  margin-bottom: 12px;
+}
+
+footer p, footer a {
+  color: #bbb;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 2;
+}
+
+.admin-profile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.admin-profile img {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--pink);
+}
+
+.copyright {
+  text-align: center;
+  color: #777;
+  border-top: 1px solid #222;
+  padding-top: 20px;
+  margin-top: 25px;
+  font-size: 12px;
+}
+
+/* LOGIN */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: #000c;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal-box {
+  background: #191920;
+  border: 1px solid var(--pink);
+  border-radius: 15px;
+  width: 100%;
+  max-width: 400px;
+  padding: 28px;
+}
+
+.modal-box h2 {
+  color: var(--pink);
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.modal-box p {
+  color: #aaa;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 13px;
+}
+
+.modal-box .field {
+  margin-bottom: 15px;
+}
+
+.modal-box button {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.close-btn {
+  background: transparent;
+  color: #aaa;
+  margin-top: 10px !important;
+}
+
+.help-link {
+  text-align: center;
+  display: block;
+  color: var(--pink);
+  font-size: 13px;
+  margin-top: 15px;
+  text-decoration: none;
+}
+
+/* DASHBOARD */
+.dashboard {
+  display: none;
+  padding: 30px 6%;
+}
+
+.dashboard.active {
+  display: block;
+}
+
+.dash-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.stat {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 20px;
+  border-left: 4px solid var(--pink);
+}
+
+.stat h3 {
+  color: var(--pink);
+  font-size: 26px;
+  margin-top: 10px;
+}
+
+.admin-table-wrap {
+  overflow-x: auto;
+  background: var(--card);
+  border-radius: 12px;
+  padding: 15px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+th, td {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid #333;
+  font-size: 13px;
+}
+
+th {
+  color: var(--pink);
+}
+
+.status {
+  padding: 5px 9px;
+  border-radius: 20px;
+  background: #333;
+  font-size: 11px;
+}
+
+.status.accepted {
+  background: #164d2a;
+  color: #8bffb1;
+}
+
+.status.rejected {
+  background: #511d25;
+  color: #ffaaaa;
+}
+
+.status.pending {
+  background: #4c3b13;
+  color: #ffd86a;
+}
+
+.action-btn {
+  padding: 7px 10px;
+  font-size: 11px;
+  margin: 2px;
+}
+
+.member-box {
+  background: var(--card);
+  padding: 25px;
+  border-radius: 12px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+#message {
+  text-align: center;
+  margin-top: 12px;
+  color: #ff7ac4;
+  font-size: 13px;
+}
+
+@media(max-width: 750px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 45px 6%;
+  }
+
+  .hero-logo {
+    flex: auto;
+    max-width: 230px;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .field.full {
+    grid-column: auto;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header id="mainHeader">
+  <div class="logo-area">
+    <img src="assets/logo.png" alt="Logo IPPMA">
+    <div>
+      <h2>IPPMA SE-JAYAPURA</h2>
+      <p>Ikatan Pemuda Pelajar & Mahasiswa/i Apogo</p>
+    </div>
+  </div>
+
+  <nav>
+    <a href="#home">Beranda</a>
+    <a href="#profil">Profil</a>
+    <a href="#persyaratan">Persyaratan</a>
+    <a href="#daftar">Pendaftaran</a>
+    <button class="btn-pink" onclick="openLogin()">LOGIN</button>
+  </nav>
+</header>
+
+<!-- BERANDA -->
+<div id="publicSite">
+
+<section class="hero" id="home">
+  <div class="hero-text">
+    <div class="tag">PENERIMAAN ANGGOTA 2026/2027</div>
+    <h1>Selamat Datang di<br><span>IPPMA Se-Jayapura</span></h1>
+    <p>
+      Website resmi pendaftaran Ikatan Pemuda Pelajar dan
+      Mahasiswa/i Apogo Kota Studi Se-Jayapura.
+      Daftarkan diri Anda, lengkapi data, dan menjadi bagian
+      dari keluarga besar IPPMA.
+    </p>
+
+    <div class="hero-buttons">
+      <button class="btn-pink" onclick="scrollToRegister()">
+        DAFTAR SEKARANG
+      </button>
+      <button class="btn-outline" onclick="openLogin()">
+        LOGIN ANGGOTA
+      </button>
+    </div>
+  </div>
+
+  <div class="hero-logo">
+    <img src="assets/logo.png" alt="Logo organisasi IPPMA">
+  </div>
+</section>
+
+<section id="profil">
+  <div class="section-title">
+    <h2>TENTANG IPPMA</h2>
+    <p>Ikatan Pemuda Pelajar dan Mahasiswa/i Apogo Se-Jayapura</p>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Profil Organisasi</h3>
+      <p>
+        IPPMA merupakan wadah pemuda, pelajar, dan mahasiswa/i Apogo
+        yang berada di Kota Studi Jayapura.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Persatuan</h3>
+      <p>
+        Menjadi tempat membangun kebersamaan, persaudaraan,
+        solidaritas, dan hubungan kekeluargaan antaranggota.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Pendidikan</h3>
+      <p>
+        Mendorong anggota untuk belajar, berkembang, dan berkontribusi
+        dalam dunia pendidikan serta masyarakat.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- PERSYARATAN -->
+<section id="persyaratan">
+  <div class="section-title">
+    <h2>PERSYARATAN PENDAFTARAN</h2>
+    <p>Siapkan dokumen berikut sebelum mengisi formulir</p>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <h3>01. Data Diri</h3>
+      <p>Nama lengkap, tempat tanggal lahir, jenis kelamin, alamat, dan nomor WhatsApp aktif.</p>
+    </div>
+
+    <div class="card">
+      <h3>02. Pendidikan</h3>
+      <p>Asal sekolah, tahun lulus, universitas, fakultas, dan program studi.</p>
+    </div>
+
+    <div class="card">
+      <h3>03. Dokumen</h3>
+      <p>Pas foto serta ijazah atau surat keterangan lulus untuk keperluan verifikasi.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FORM PENDAFTARAN -->
+<section class="form-section" id="daftar">
+  <div class="section-title">
+    <h2>FORMULIR PENDAFTARAN</h2>
+    <p>Mahasiswa Baru dan Mahasiswa Lama — Tahun 2026</p>
+  </div>
+
+  <form id="registerForm">
+    <div class="form-grid">
+
+      <div class="field full">
+        <label>Jenis Pendaftaran *</label>
+        <select name="jenis" required>
+          <option value="">Pilih jenis pendaftaran</option>
+          <option>Mahasiswa Baru</option>
+          <option>Mahasiswa Lama</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Nama Lengkap *</label>
+        <input name="nama" required placeholder="Nama lengkap">
+      </div>
+
+      <div class="field">
+        <label>Jenis Kelamin *</label>
+        <select name="gender" required>
+          <option value="">Pilih</option>
+          <option>Laki-laki</option>
+          <option>Perempuan</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Tempat Lahir *</label>
+        <input name="tempat" required>
+      </div>
+
+      <div class="field">
+        <label>Tanggal Lahir *</label>
+        <input name="tanggal" type="date" required>
+      </div>
+
+      <div class="field full">
+        <label>Alamat Tempat Tinggal *</label>
+        <textarea name="alamat" required></textarea>
+      </div>
+
+      <div class="field">
+        <label>Nomor HP / WhatsApp *</label>
+        <input name="hp" type="tel" required placeholder="08xxxxxxxxxx">
+      </div>
+
+      <div class="field">
+        <label>Asal Sekolah *</label>
+        <input name="sekolah" required>
+      </div>
+
+      <div class="field">
+        <label>Tahun Lulus *</label>
+        <input name="lulus" type="number" min="2025" max="2030" required>
+      </div>
+
+      <div class="field">
+        <label>Universitas *</label>
+        <input name="universitas" required>
+      </div>
+
+      <div class="field">
+        <label>Fakultas *</label>
+        <input name="fakultas" required>
+      </div>
+
+      <div class="field">
+        <label>Program Studi / Jurusan *</label>
+        <input name="jurusan" required>
+      </div>
+
+      <div class="field">
+        <label>Nama Orang Tua / Wali *</label>
+        <input name="wali" required>
+      </div>
+
+      <div class="field">
+        <label>Upload Pas Foto *</label>
+        <input name="foto" type="file" accept="image/*" required>
+        <p class="small-note">Foto ukuran 3×4. File gambar saja.</p>
+      </div>
+
+      <div class="field">
+        <label>Upload Ijazah / SKL *</label>
+        <input name="ijazah" type="file" accept=".pdf,.jpg,.jpeg,.png" required>
+        <p class="small-note">PDF atau gambar.</p>
+      </div>
+
+    </div>
+
+    <button type="submit" class="btn-pink full-btn">
+      KIRIM PENDAFTARAN
+    </button>
+
+    <p id="message"></p>
+  </form>
+</section>
+
+</div><!-- END PUBLIC SITE -->
+
+<!-- DASHBOARD -->
+<div class="dashboard" id="dashboard">
+
+  <div class="dash-top">
+    <div>
+      <h2 id="dashTitle" style="color:#ed168c">Dashboard</h2>
+      <p id="dashWelcome" style="color:#aaa;margin-top:8px"></p>
+    </div>
+    <button class="btn-outline" onclick="logout()">LOGOUT</button>
+  </div>
+
+  <!-- DASHBOARD ANGGOTA -->
+  <div id="memberDashboard" class="hidden">
+    <div class="stats">
+      <div class="stat">
+        Status Pendaftaran
+        <h3>Diproses</h3>
+      </div>
+      <div class="stat">
+        Tahun
+        <h3>2026</h3>
+      </div>
+    </div>
+
+    <div class="member-box">
+      <h3 style="color:#ed168c">Selamat datang di Portal Anggota IPPMA</h3>
+      <p style="margin-top:12px;color:#ccc;line-height:1.8">
+        Silakan melengkapi formulir pendaftaran dan persyaratan.
+        Status pendaftaran Anda akan diperiksa oleh Admin.
+      </p>
+      <button class="btn-pink" style="margin-top:20px" onclick="goRegister()">
+        ISI / PERBARUI DATA
+      </button>
+    </div>
+  </div>
+
+  <!-- DASHBOARD ADMIN -->
+  <div id="adminDashboard" class="hidden">
+    <div class="stats">
+      <div class="stat">Total Pendaftar<h3 id="total">0</h3></div>
+      <div class="stat">Diterima<h3 id="accepted">0</h3></div>
+      <div class="stat">Ditolak<h3 id="rejected">0</h3></div>
+      <div class="stat">Menunggu<h3 id="pending">0</h3></div>
+    </div>
+
+    <div class="admin-table-wrap">
+      <h3 style="color:#ed168c;margin-bottom:15px">Data Pendaftar (Contoh)</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Nama</th>
+            <th>Universitas</th>
+            <th>Jurusan</th>
+            <th>Status</th>
+            <th>Aksi Admin</th>
+          </tr>
+        </thead>
+        <tbody id="applicantTable"></tbody>
+      </table>
+    </div>
+    <p class="small-note" style="margin-top:12px">
+      Data di halaman ini masih contoh. Belum tersimpan di database.
+    </p>
+  </div>
+</div>
+
+<!-- LOGIN MODAL -->
+<div class="modal" id="loginModal">
+  <div class="modal-box">
+    <h2>LOGIN IPPMA</h2>
+    <p>Masuk ke portal anggota atau Admin</p>
+
+    <div class="field">
+      <label>Username</label>
+      <input id="username" placeholder="Masukkan username">
+    </div>
+
+    <div class="field">
+      <label>Password</label>
+      <input id="password" type="password" placeholder="Masukkan password">
+    </div>
+
+    <button class="btn-pink" onclick="login()">MASUK</button>
+    <button class="close-btn" onclick="closeLogin()">BATAL</button>
+
+    <a href="#kontak" class="help-link" onclick="closeLogin()">
+      Lupa password? Hubungi Admin
+    </a>
+
+    <p id="loginMessage"></p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer id="kontak">
+  <div class="footer-content">
+    <div>
+      <h3>IPPMA SE-JAYAPURA</h3>
+      <p>Ikatan Pemuda Pelajar dan Mahasiswa/i Apogo</p>
+      <p>Kota Studi Se-Jayapura</p>
+      <p>Periode Pendaftaran 2026</p>
+    </div>
+
+    <div>
+      <h4>Kontak Admin</h4>
+      <p>WhatsApp: 082195501569</p>
+      <p>Email: adiiandreasadii2025@gmail.com</p>
+      <p>YouTube: Andreas Adii</p>
+      <p>Facebook: Yme A</p>
+    </div>
+
+    <div>
+      <h4>Pengelola Website</h4>
+      <div class="admin-profile">
+        <img src="assets/admin.jpg" alt="Foto Admin">
+        <div>
+          <p style="color:white;font-weight:bold">Admin IPPMA</p>
+          <p>Pengelola Website</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="copyright">
+    © 2026 IPPMA Se-Jayapura. Semua Hak Dilindungi.
+  </div>
+</footer>
+
+<script>
+// ===================================
+// LOGIN DEMO
+// ===================================
+// HANYA UNTUK DEMO / BELAJAR.
+// Jangan gunakan login hardcoded ini
+// untuk website publik atau data sungguhan.
+
+function openLogin() {
+  document.getElementById("loginModal").classList.add("show");
+}
+
+function closeLogin() {
+  document.getElementById("loginModal").classList.remove("show");
+}
+
+function login() {
+  const username = document.getElementById("username").value.trim();
+  const password = document.getElementById("password").value;
+  const message = document.getElementById("loginMessage");
+
+  // LOGIN ADMIN DEMO
+  if (username === "Andi 123" && password === "Andi") {
+    showDashboard("admin", username);
+    closeLogin();
+    return;
+  }
+
+  // LOGIN ANGGOTA DEMO
+  if (username === "IPPMA 123" && password === "IPPMA") {
+    showDashboard("member", username);
+    closeLogin();
+    return;
+  }
+
+  message.innerHTML =
+    "Username atau password salah. Silakan coba kembali atau hubungi Admin.";
+}
+
+// ===================================
+// DASHBOARD
+// ===================================
+
+function showDashboard(role, username) {
+  document.getElementById("publicSite").classList.add("hidden");
+  document.getElementById("mainHeader").classList.add("hidden");
+  document.querySelector("footer").classList.add("hidden");
+  document.getElementById("dashboard").classList.add("active");
+
+  document.getElementById("dashWelcome").textContent =
+    "Selamat datang, " + username;
+
+  if (role === "admin") {
+    document.getElementById("dashTitle").textContent = "Dashboard Admin";
+    document.getElementById("adminDashboard").classList.remove("hidden");
+    renderTable();
+  } else {
+    document.getElementById("dashTitle").textContent = "Dashboard Anggota";
+    document.getElementById("memberDashboard").classList.remove("hidden");
+  }
+
+  window.scrollTo(0, 0);
+}
+
+function logout() {
+  document.getElementById("dashboard").classList.remove("active");
+  document.getElementById("adminDashboard").classList.add("hidden");
+  document.getElementById("memberDashboard").classList.add("hidden");
+  document.getElementById("publicSite").classList.remove("hidden");
+  document.getElementById("mainHeader").classList.remove("hidden");
+  document.querySelector("footer").classList.remove("hidden");
+
+  document.getElementById("username").value = "";
+  document.getElementById("password").value = "";
+  window.scrollTo(0, 0);
+}
+
+function goRegister() {
+  logout();
+  scrollToRegister();
+}
+
+function scrollToRegister() {
+  document.getElementById("daftar").scrollIntoView({
+    behavior: "smooth"
+  });
+}
+
+// ===================================
+// DEMO DATA ADMIN
+// ===================================
+
+let applicants = [
+  {
+    nama: "Contoh Mahasiswa 1",
+    universitas: "Universitas Contoh",
+    jurusan: "Teknik Informatika",
+    status: "Menunggu"
+  },
+  {
+    nama: "Contoh Mahasiswa 2",
+    universitas: "Universitas Contoh",
+    jurusan: "Pendidikan",
+    status: "Menunggu"
+  }
+];
+
+function renderTable() {
+  const table = document.getElementById("applicantTable");
+  table.innerHTML = "";
+
+  applicants.forEach((a, index) => {
+    let statusClass = "pending";
+
+    if (a.status === "Diterima") statusClass = "accepted";
+    if (a.status === "Ditolak") statusClass = "rejected";
+
+    table.innerHTML += `
+      <tr>
+        <td>${a.nama}</td>
+        <td>${a.universitas}</td>
+        <td>${a.jurusan}</td>
+        <td><span class="status ${statusClass}">${a.status}</span></td>
+        <td>
+          <button class="btn-blue action-btn"
+            onclick="changeStatus(${index},'Diterima')">
+            Terima
+          </button>
+
+          <button class="btn-pink action-btn"
+            onclick="changeStatus(${index},'Ditolak')">
+            Tolak
+          </button>
+
+          <button class="btn-outline action-btn"
+            onclick="removeApplicant(${index})">
+            Hapus
+          </button>
+        </td>
+      </tr>
+    `;
+  });
+
+  document.getElementById("total").textContent = applicants.length;
+  document.getElementById("accepted").textContent =
+    applicants.filter(a => a.status === "Diterima").length;
+  document.getElementById("rejected").textContent =
+    applicants.filter(a => a.status === "Ditolak").length;
+  document.getElementById("pending").textContent =
+    applicants.filter(a => a.status === "Menunggu").length;
+}
+
+function changeStatus(index, status) {
+  applicants[index].status = status;
+  renderTable();
+}
+
+function removeApplicant(index) {
+  if (confirm("Yakin ingin menghapus data contoh ini?")) {
+    applicants.splice(index, 1);
+    renderTable();
+  }
+}
+
+// ===================================
+// FORM DEMO
+// ===================================
+
+document.getElementById("registerForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  alert(
+    "Form berhasil diuji dari sisi tampilan! " +
+    "Versi ini belum menyimpan data ke database. " +
+    "PHP dan database akan ditambahkan pada tahap berikut."
+  );
+
+  this.reset();
+});
+</script>
+
+</body>
+</html>
+

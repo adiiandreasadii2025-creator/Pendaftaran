@@ -1,0 +1,21 @@
+
+<?php
+$host = "localhost";
+$user = "root";
+$password = "";
+$database = "ippma-2026";
+
+$koneksi = mysqli_connect(
+    $host,
+    $user,
+    $password,
+    $database
+);
+
+if (!$koneksi) {
+    die("Koneksi database gagal: " . mysqli_connect_error());
+}
+
+echo "Database IPPMA berhasil terhubung!";
+?>
+
